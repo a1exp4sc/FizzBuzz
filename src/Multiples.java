@@ -9,6 +9,7 @@ public class Multiples {
             boolean divisibleBy5 = i % 5 == 0;
 
             if (divisibleBy3 || divisibleBy5) {
+
                 sum += 1;
             }
 
