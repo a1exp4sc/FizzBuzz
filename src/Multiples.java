@@ -1,20 +1,25 @@
 public class Multiples {
-    public static void main(String[] args) {
 
+    // Original main method which calculates the sum of multiples
+    public static int main(int n, int a, int b) {
         int sum = 0;
 
-        for (int i = 1; i < 1001; i++) {
+        for (int i = 1; i < n; i++) {
+            boolean divisibleByA = i % a == 0;
+            boolean divisibleByB = i % b == 0;
 
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
-
-            if (divisibleBy3 || divisibleBy5) {
-
-                sum += 1;
+            if (divisibleByA || divisibleByB) {
+                sum += i;
             }
-
         }
 
-        System.out.println(sum);
+        return sum;
+    }
+
+    // Overloaded main method which calls the original main method with default values
+    public static void main(String[] args) {
+        // Call the original main method with default values
+        int result = main(1000, 3, 5);
+        System.out.println(result);
     }
 }
